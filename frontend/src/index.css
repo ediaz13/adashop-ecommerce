@@ -3,10 +3,14 @@ main {
 }
 
 h3 {
-    padding: 1rem 0;
+    padding: 0.5rem 0;
 }
 
 .rating span {
     margin: 0.1rem;
 }
 
+.h5 {
+    text-transform: none;
+    letter-spacing: 1px;
+}
