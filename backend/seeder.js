@@ -1,4 +1,4 @@
-import mongoose  from 'mongoose'
+import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import colors from 'colors'
 import users from './data/users.js'
@@ -13,13 +13,13 @@ dotenv.config()
 connectDB()
 
 const importData = async () => {
-    try {
+  try {
     await Order.deleteMany()
     await Product.deleteMany()
     await User.deleteMany()
 
     const createdUsers = await User.insertMany(users)
-    console.log(createdUsers[0])    
+
     const adminUser = createdUsers[0]._id
 
     const sampleProducts = products.map((product) => {
@@ -27,33 +27,31 @@ const importData = async () => {
     })
 
     await Product.insertMany(sampleProducts)
-    console.log(sampleProducts[0].brand)
+
     console.log('Data Imported!'.green.inverse)
     process.exit()
-    
-    } catch (error) {
-        console.error(`${error}`.red.inverse)        
-        process.exit(1)
-    }
+  } catch (error) {
+    console.error(`${error}`.red.inverse)
+    process.exit(1)
+  }
 }
 
 const destroyData = async () => {
-    try {
-        await Order.deleteMany()
-        await Product.deleteMany()
-        await User.deleteMany()
-        
-        console.log('Data Deleted!'.red.inverse)
-        process.exit()
-    } catch (error) {
-        console.error(`${error}`.red.inverse)        
-        process.exit(1)
-    }
+  try {
+    await Order.deleteMany()
+    await Product.deleteMany()
+    await User.deleteMany()
+
+    console.log('Data Destroyed!'.red.inverse)
+    process.exit()
+  } catch (error) {
+    console.error(`${error}`.red.inverse)
+    process.exit(1)
+  }
 }
 
-
 if (process.argv[2] === '-d') {
-    destroyData()
+  destroyData()
 } else {
-    importData()
+  importData()
 }
