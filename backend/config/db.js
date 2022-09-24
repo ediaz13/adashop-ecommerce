@@ -5,7 +5,7 @@ const connectDB = async () => {
     const conn = await mongoose.connect(process.env.MONGO_URI, {
       useUnifiedTopology: true,
       useNewUrlParser: true,
-      //useCreateIndex: true,
+      //useCreateIndex: true,  Mongoose 6 always behaves as if useNewUrlParser, useUnifiedTopology, and useCreateIndex are true
     })
 
     console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline)

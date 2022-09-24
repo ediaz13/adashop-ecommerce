@@ -25,7 +25,7 @@ const OrderListScreen = ({ history }) => {
 
   return (
     <>
-      <h1>Orders</h1>
+      <h1>Ordenes</h1>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -35,11 +35,11 @@ const OrderListScreen = ({ history }) => {
           <thead>
             <tr>
               <th>ID</th>
-              <th>USER</th>
-              <th>DATE</th>
+              <th>USUARIO</th>
+              <th>FECHA</th>
               <th>TOTAL</th>
-              <th>PAID</th>
-              <th>DELIVERED</th>
+              <th>PAGO</th>
+              <th>ENTREGADO</th>
               <th></th>
             </tr>
           </thead>

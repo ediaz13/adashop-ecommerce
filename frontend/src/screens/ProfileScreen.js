@@ -47,7 +47,7 @@ const ProfileScreen = ({ location, history }) => {
   const submitHandler = (e) => {
     e.preventDefault()
     if (password !== confirmPassword) {
-      setMessage('Passwords do not match')
+      setMessage('Contraseñas no coinciden')
     } else {
       dispatch(updateUserProfile({ id: user._id, name, email, password }))
     }
@@ -77,10 +77,10 @@ const ProfileScreen = ({ location, history }) => {
             </Form.Group>
 
             <Form.Group controlId='email'>
-              <Form.Label>Email Address</Form.Label>
+              <Form.Label>Dirección de Email</Form.Label>
               <Form.Control
                 type='email'
-                placeholder='Enter email'
+                placeholder='Ingresá email'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               ></Form.Control>
@@ -113,7 +113,7 @@ const ProfileScreen = ({ location, history }) => {
         )}
       </Col>
       <Col md={9}>
-        <h2>My Orders</h2>
+        <h2>Mis Órdenes</h2>
         {loadingOrders ? (
           <Loader />
         ) : errorOrders ? (
@@ -123,10 +123,10 @@ const ProfileScreen = ({ location, history }) => {
             <thead>
               <tr>
                 <th>ID</th>
-                <th>DATE</th>
+                <th>FECHA</th>
                 <th>TOTAL</th>
-                <th>PAID</th>
-                <th>DELIVERED</th>
+                <th>PAGO</th>
+                <th>ENVIADO</th>
                 <th></th>
               </tr>
             </thead>
@@ -153,7 +153,7 @@ const ProfileScreen = ({ location, history }) => {
                   <td>
                     <LinkContainer to={`/order/${order._id}`}>
                       <Button className='btn-sm' variant='light'>
-                        Details
+                        Detalles
                       </Button>
                     </LinkContainer>
                   </td>
