@@ -12,7 +12,7 @@ const Meta = ({ title, description, keywords }) => {
 }
 
 Meta.defaultProps = {
-  title: 'Bienvenido a EmaShop',
+  title: 'Bienvenido a AdaShop',
   description: 'Vendemos los productos electronicos bien baratos',
   keywords: 'Productos eectronicos, compra productoselectronicos, productos electronicos barata',
 }
