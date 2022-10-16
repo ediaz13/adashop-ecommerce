@@ -1,2 +1,30 @@
-El fix fue cambiar:
+ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ El fix fue cambiar:
  Form.Control por  Form.Control
+ 
+ Fix en error:
+ https://roytuts.com/how-to-fix-err_ossl_evp_unsupported-in-react-js-application/
+ 
+ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ package.json
+ LOCAL
+  "scripts": {
+    "start": "react-scripts --openssl-legacy-provider start ",
+    "build": "react-scripts --openssl-legacy-provider build ",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  }
+  
+  PROD
+  "scripts": {
+    "start": "react-scripts start --openssl-legacy-provider",
+    "build": "react-scripts build --openssl-legacy-provider",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  }
+  
+  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  
+  https://adashopapp.herokuapp.com/
+  
+  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
