@@ -1,7 +1,7 @@
 const products = [
   {
     name: "Auriculares Airpods Wireless Bluetooth",
-    image: "/images/airpods.jpg",
+    image: "/images/ada.jpg",
     description:
       "La tecnología Bluetooth le permite conectarse con dispositivos compatibles de forma inalámbrica. El audio AAC de alta calidad ofrece una experiencia auditiva inmersiva. El micrófono incorporado le permite recibir llamadas mientras trabaja",
     brand: "Apple",
