@@ -61,7 +61,7 @@ const ProductListScreen = ({ history, match }) => {
   ])
 
   const deleteHandler = (id) => {
-    if (window.confirm('Estas seguro?')) {
+    if (window.confirm('Are you sure')) {
       dispatch(deleteProduct(id))
     }
   }
@@ -74,11 +74,11 @@ const ProductListScreen = ({ history, match }) => {
     <>
       <Row className='align-items-center'>
         <Col>
-          <h1>Productos</h1>
+          <h1>Products</h1>
         </Col>
         <Col className='text-right'>
           <Button className='my-3' onClick={createProductHandler}>
-            <i className='fas fa-plus'></i> Crear Producto
+            <i className='fas fa-plus'></i> Create Product
           </Button>
         </Col>
       </Row>
@@ -96,10 +96,10 @@ const ProductListScreen = ({ history, match }) => {
             <thead>
               <tr>
                 <th>ID</th>
-                <th>NOMBRE</th>
-                <th>PRECIO</th>
-                <th>CATEGORIA</th>
-                <th>MARCA</th>
+                <th>NAME</th>
+                <th>PRICE</th>
+                <th>CATEGORY</th>
+                <th>BRAND</th>
                 <th></th>
               </tr>
             </thead>

@@ -97,7 +97,7 @@ const ProductEditScreen = ({ match, history }) => {
         Go Back
       </Link>
       <FormContainer>
-        <h1>Editar Producto</h1>
+        <h1>Edit Product</h1>
         {loadingUpdate && <Loader />}
         {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
         {loading ? (
@@ -107,7 +107,7 @@ const ProductEditScreen = ({ match, history }) => {
         ) : (
           <Form onSubmit={submitHandler}>
             <Form.Group controlId='name'>
-              <Form.Label>Nombre</Form.Label>
+              <Form.Label>Name</Form.Label>
               <Form.Control
                 type='name'
                 placeholder='Enter name'
@@ -117,7 +117,7 @@ const ProductEditScreen = ({ match, history }) => {
             </Form.Group>
 
             <Form.Group controlId='price'>
-              <Form.Label>Precio</Form.Label>
+              <Form.Label>Price</Form.Label>
               <Form.Control
                 type='number'
                 placeholder='Enter price'
@@ -127,23 +127,24 @@ const ProductEditScreen = ({ match, history }) => {
             </Form.Group>
 
             <Form.Group controlId='image'>
-              <Form.Label>Imagen</Form.Label>
+              <Form.Label>Image</Form.Label>
               <Form.Control
                 type='text'
                 placeholder='Enter image url'
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
               ></Form.Control>
-              <Form.Control
-                type="file"
+              <Form.File
+                id='image-file'
                 label='Choose File'
+                custom
                 onChange={uploadFileHandler}
-              ></Form.Control>
+              ></Form.File>
               {uploading && <Loader />}
             </Form.Group>
 
             <Form.Group controlId='brand'>
-              <Form.Label>Marca</Form.Label>
+              <Form.Label>Brand</Form.Label>
               <Form.Control
                 type='text'
                 placeholder='Enter brand'
@@ -153,7 +154,7 @@ const ProductEditScreen = ({ match, history }) => {
             </Form.Group>
 
             <Form.Group controlId='countInStock'>
-              <Form.Label>En stock</Form.Label>
+              <Form.Label>Count In Stock</Form.Label>
               <Form.Control
                 type='number'
                 placeholder='Enter countInStock'
@@ -163,27 +164,27 @@ const ProductEditScreen = ({ match, history }) => {
             </Form.Group>
 
             <Form.Group controlId='category'>
-              <Form.Label>Categoria</Form.Label>
+              <Form.Label>Category</Form.Label>
               <Form.Control
                 type='text'
-                placeholder='Ingresá categoría'
+                placeholder='Enter category'
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group controlId='description'>
-              <Form.Label>Descripción</Form.Label>
+              <Form.Label>Description</Form.Label>
               <Form.Control
                 type='text'
-                placeholder='Ingresá descripción'
+                placeholder='Enter description'
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Button type='submit' variant='primary'>
-              Actualizar
+              Update
             </Button>
           </Form>
         )}

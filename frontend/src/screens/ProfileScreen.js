@@ -47,7 +47,7 @@ const ProfileScreen = ({ location, history }) => {
   const submitHandler = (e) => {
     e.preventDefault()
     if (password !== confirmPassword) {
-      setMessage('Contraseñas no coinciden')
+      setMessage('Passwords do not match')
     } else {
       dispatch(updateUserProfile({ id: user._id, name, email, password }))
     }
@@ -56,7 +56,7 @@ const ProfileScreen = ({ location, history }) => {
   return (
     <Row>
       <Col md={3}>
-        <h2>Perfil de Usuario</h2>
+        <h2>User Profile</h2>
         {message && <Message variant='danger'>{message}</Message>}
         {}
         {success && <Message variant='success'>Profile Updated</Message>}
@@ -67,7 +67,7 @@ const ProfileScreen = ({ location, history }) => {
         ) : (
           <Form onSubmit={submitHandler}>
             <Form.Group controlId='name'>
-              <Form.Label>Nombre</Form.Label>
+              <Form.Label>Name</Form.Label>
               <Form.Control
                 type='name'
                 placeholder='Enter name'
@@ -77,43 +77,43 @@ const ProfileScreen = ({ location, history }) => {
             </Form.Group>
 
             <Form.Group controlId='email'>
-              <Form.Label>Dirección de Email</Form.Label>
+              <Form.Label>Email Address</Form.Label>
               <Form.Control
                 type='email'
-                placeholder='Ingresá email'
+                placeholder='Enter email'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group controlId='password'>
-              <Form.Label>Contraseña</Form.Label>
+              <Form.Label>Password</Form.Label>
               <Form.Control
                 type='password'
-                placeholder='Ingresá contraseña'
+                placeholder='Enter password'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group controlId='confirmPassword'>
-              <Form.Label>Confirma Contraseña</Form.Label>
+              <Form.Label>Confirm Password</Form.Label>
               <Form.Control
                 type='password'
-                placeholder='Confirma Contraseña'
+                placeholder='Confirm password'
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Button type='submit' variant='primary'>
-              Actualizá
+              Update
             </Button>
           </Form>
         )}
       </Col>
       <Col md={9}>
-        <h2>Mis Órdenes</h2>
+        <h2>My Orders</h2>
         {loadingOrders ? (
           <Loader />
         ) : errorOrders ? (
@@ -123,10 +123,10 @@ const ProfileScreen = ({ location, history }) => {
             <thead>
               <tr>
                 <th>ID</th>
-                <th>FECHA</th>
+                <th>DATE</th>
                 <th>TOTAL</th>
-                <th>PAGO</th>
-                <th>ENVIADO</th>
+                <th>PAID</th>
+                <th>DELIVERED</th>
                 <th></th>
               </tr>
             </thead>
@@ -153,7 +153,7 @@ const ProfileScreen = ({ location, history }) => {
                   <td>
                     <LinkContainer to={`/order/${order._id}`}>
                       <Button className='btn-sm' variant='light'>
-                        Detalles
+                        Details
                       </Button>
                     </LinkContainer>
                   </td>

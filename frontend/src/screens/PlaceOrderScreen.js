@@ -67,9 +67,9 @@ const PlaceOrderScreen = ({ history }) => {
         <Col md={8}>
           <ListGroup variant='flush'>
             <ListGroup.Item>
-              <h2>Envio</h2>
+              <h2>Shipping</h2>
               <p>
-                <strong>Direción:</strong>
+                <strong>Address:</strong>
                 {cart.shippingAddress.address}, {cart.shippingAddress.city}{' '}
                 {cart.shippingAddress.postalCode},{' '}
                 {cart.shippingAddress.country}
@@ -77,15 +77,15 @@ const PlaceOrderScreen = ({ history }) => {
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Método de pago</h2>
-              <strong>Método de pago: </strong>
+              <h2>Payment Method</h2>
+              <strong>Method: </strong>
               {cart.paymentMethod}
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Arículos</h2>
+              <h2>Order Items</h2>
               {cart.cartItems.length === 0 ? (
-                <Message>Tu carrito está vacío</Message>
+                <Message>Your cart is empty</Message>
               ) : (
                 <ListGroup variant='flush'>
                   {cart.cartItems.map((item, index) => (
@@ -119,23 +119,23 @@ const PlaceOrderScreen = ({ history }) => {
           <Card>
             <ListGroup variant='flush'>
               <ListGroup.Item>
-                <h2>Resumen de Orden</h2>
+                <h2>Order Summary</h2>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Articulos</Col>
+                  <Col>Items</Col>
                   <Col>${cart.itemsPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Envío</Col>
+                  <Col>Shipping</Col>
                   <Col>${cart.shippingPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Impuestos</Col>
+                  <Col>Tax</Col>
                   <Col>${cart.taxPrice}</Col>
                 </Row>
               </ListGroup.Item>
@@ -155,7 +155,7 @@ const PlaceOrderScreen = ({ history }) => {
                   disabled={cart.cartItems === 0}
                   onClick={placeOrderHandler}
                 >
-                  Realizar Orden
+                  Place Order
                 </Button>
               </ListGroup.Item>
             </ListGroup>

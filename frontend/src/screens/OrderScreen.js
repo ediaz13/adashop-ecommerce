@@ -98,16 +98,16 @@ const OrderScreen = ({ match, history }) => {
         <Col md={8}>
           <ListGroup variant='flush'>
             <ListGroup.Item>
-              <h2>Transporte</h2>
+              <h2>Shipping</h2>
               <p>
-                <strong>Nombre: </strong> {order.user.name}
+                <strong>Name: </strong> {order.user.name}
               </p>
               <p>
                 <strong>Email: </strong>{' '}
                 <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
               </p>
               <p>
-                <strong>Dirección:</strong>
+                <strong>Address:</strong>
                 {order.shippingAddress.address}, {order.shippingAddress.city}{' '}
                 {order.shippingAddress.postalCode},{' '}
                 {order.shippingAddress.country}
@@ -117,27 +117,27 @@ const OrderScreen = ({ match, history }) => {
                   Delivered on {order.deliveredAt}
                 </Message>
               ) : (
-                <Message variant='danger'>No entregado</Message>
+                <Message variant='danger'>Not Delivered</Message>
               )}
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Método de pago</h2>
+              <h2>Payment Method</h2>
               <p>
-                <strong>Método: </strong>
+                <strong>Method: </strong>
                 {order.paymentMethod}
               </p>
               {order.isPaid ? (
-                <Message variant='success'>Pagado en {order.paidAt}</Message>
+                <Message variant='success'>Paid on {order.paidAt}</Message>
               ) : (
-                <Message variant='danger'>No pago</Message>
+                <Message variant='danger'>Not Paid</Message>
               )}
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Artículos</h2>
+              <h2>Order Items</h2>
               {order.orderItems.length === 0 ? (
-                <Message>Orden vacía</Message>
+                <Message>Order is empty</Message>
               ) : (
                 <ListGroup variant='flush'>
                   {order.orderItems.map((item, index) => (
@@ -171,23 +171,23 @@ const OrderScreen = ({ match, history }) => {
           <Card>
             <ListGroup variant='flush'>
               <ListGroup.Item>
-                <h2>Resumen de orden</h2>
+                <h2>Order Summary</h2>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Artículos</Col>
+                  <Col>Items</Col>
                   <Col>${order.itemsPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Entrega</Col>
+                  <Col>Shipping</Col>
                   <Col>${order.shippingPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Impuestos</Col>
+                  <Col>Tax</Col>
                   <Col>${order.taxPrice}</Col>
                 </Row>
               </ListGroup.Item>
@@ -221,7 +221,7 @@ const OrderScreen = ({ match, history }) => {
                       className='btn btn-block'
                       onClick={deliverHandler}
                     >
-                      Listo para la entrega
+                      Mark As Delivered
                     </Button>
                   </ListGroup.Item>
                 )}

@@ -53,7 +53,7 @@ const UserEditScreen = ({ match, history }) => {
         Go Back
       </Link>
       <FormContainer>
-        <h1>Editar Usuario</h1>
+        <h1>Edit User</h1>
         {loadingUpdate && <Loader />}
         {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
         {loading ? (
@@ -73,10 +73,10 @@ const UserEditScreen = ({ match, history }) => {
             </Form.Group>
 
             <Form.Group controlId='email'>
-              <Form.Label>Dirección de Email</Form.Label>
+              <Form.Label>Email Address</Form.Label>
               <Form.Control
                 type='email'
-                placeholder='Ingresá email'
+                placeholder='Enter email'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               ></Form.Control>
